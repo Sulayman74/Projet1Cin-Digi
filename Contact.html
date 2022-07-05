@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/Contact.css" />
+    <link rel="stylesheet" href="css/all_awosame_pro.css" />
+    <link rel="icon" href="assets/icon_site/spider-web.png" type="svg/x-icon" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <header>
+      <div class="Menu_Burger">
+        <input type="checkbox" name="Burger" id="Burger" />
+        <label for="Burger">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </label>
+        <div class="MenuApparait">
+          <a href="Acceuil.html">Accueil</a>
+          <a href="Selection_du_mois.html">Notre Selection Du mois</a>
+          <a href="A-Propos.html">à Propos</a>
+          <a href="LibrairieDeFilms.html">Librairie De Films</a>
+          <a href="Contact.html">Formulaire de Contact</a>
+          <a href="Favoris.html">Votre Selection</a>
+        </div>
+      </div>
+      <h1>Formulaire de Contact</h1>
+    </header>
+
+    <main>
+      <section class="Formulaire">
+        <form class="ContactUs" action="index.html" method="post">
+          <div class="LeNom">
+            <!-- la partie effet sur le faux placeholder avec :focus et les siblings. placer un espace dans le placeholder pour le pseudo selecteur placeholder shown -->
+            <input
+              class="Name"
+              id="First"
+              type="text"
+              placeholder=" "
+              autocomplete="off"
+            />
+            <label class="Nom" for="First">Votre Nom</label>
+          </div>
+          <div class="LeMail">
+            <input class="Email" id="Second" type="email" placeholder=" " />
+            <label for="Second" class="Mail"> Votre E-mail </label>
+          </div>
+
+          <!-- Effet faux placeholder fin sur les deux inputs plus haut -->
+          <textarea id="Message" name="name" rows="8" cols="80"> </textarea>
+          <!-- Bouton rouge submit Envoyer -->
+          <div class="input4">
+            <input type="submit" value="Envoyer" />
+          </div>
+        </form>
+      </section>
+
+      <div class="LigneRouge">
+        <img
+          src="assets/icon_site/LigneRed.svg"
+          alt="lignerougeverticale"
+          height="300px"
+        />
+      </div>
+    </main>
+    <footer>
+      <section class="Icons">
+        <i class="fa-brands fa-instagram"></i>
+
+        <i class="fa-brands fa-facebook-square"></i>
+      </section>
+    </footer>
+  </body>
+</html>

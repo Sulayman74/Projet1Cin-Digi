@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Metamorphous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+body {
+  background-image: url("/assets/Images_web/FondAbout.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 100vh; */
+  cursor: url("../assets/icon_site/batman-logo-silhouette.png"), auto;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  /* background-color: coral; */
+  position: relative;
+}
+/* Mon menu Burger Début */
+#Burger {
+  display: none;
+}
+/* la transformation en croix des 3 barres */
+#Burger:checked ~ label .bar1 {
+  transform: rotate(45deg);
+  background-color: #831e08;
+}
+#Burger:checked ~ label .bar3 {
+  transform: rotate(-45deg);
+  background-color: #831e08;
+}
+#Burger:checked ~ label .bar2 {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+label .bar1,
+label .bar3 {
+  transform-origin: left;
+}
+
+label {
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s linear;
+}
+
+label:hover {
+  transform: scale(1.2) rotate(-90deg);
+}
+
+.Menu_Burger {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+}
+
+.Menu_Burger div:not(.MenuApparait) {
+  height: 3px;
+  width: 22.5px;
+  background-color: wheat;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+/* Menu Burger fin de la création 3 barres */
+.MenuApparait {
+  display: flex;
+  flex-direction: column;
+  /* background-color: violet; */
+  width: 200px;
+  height: 50vh;
+  transform: translateX(-100%);
+  transition: all 0.4s linear;
+}
+
+.MenuApparait a {
+  padding: 20px;
+  font-family: "Koulen", sans-serif;
+  font-size: 17px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: wheat;
+  transition: all 0.4s ease;
+  /* background-color: rgba(113, 69, 69, 0.471); */
+  position: relative;
+  width: fit-content;
+}
+/* à l'interieur du Menu Burger effet underline scale début */
+.MenuApparait a:after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 30%;
+  left: 10%;
+  background-color: #831e08;
+  transform-origin: bottom left;
+  transition: transform 0.4s ease;
+}
+
+.MenuApparait a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  background-color: wheat;
+}
+/* fin de l'effet underline */
+.MenuApparait a:hover {
+  transform: scale(0.9);
+  color: #831e08;
+}
+/* Apparition du Menu quand on check le label/box */
+#Burger:checked ~ div.MenuApparait {
+  transform: translateX(-10%);
+}
+
+/* Fin de mon menu Burger */
+header h1 {
+  text-transform: uppercase;
+  color: #831e08;
+  font-family: "Koulen", sans-serif;
+  font-size: 45px;
+  transform-origin: center;
+  text-align: center;
+  transition: all 0.7s ease;
+}
+header h1:hover {
+  transform: scale(1.02);
+  color: wheat;
+}
+
+#Description {
+  display: flex;
+  flex-direction: column;
+  height: 83vh;
+  justify-content: space-between;
+  /* background-color: coral; */
+}
+.Articles1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  /* background-color: royalblue; */
+  text-align: center;
+  padding: 0 10px;
+}
+/* Le X-Wing Animé */
+.article1:after {
+  content: "";
+  display: block;
+  background-size: contain;
+  height: clamp(100px, 50%, 200px);
+  width: clamp(150px, 50%, 300px);
+  background-image: url("/assets/icon_site/xwing-removebg-preview.png");
+  top: 10%;
+  right: 20%;
+  position: fixed;
+  transform: rotate(180deg);
+  transition: all 1.5s linear;
+}
+
+.article1:hover::after {
+  transform: rotateY(180deg) translateY(180%);
+}
+
+.article1 {
+  display: flex;
+  justify-content: center;
+  width: clamp(350px, 70%, 1140px);
+}
+/* l'animation Superman logo */
+.Articles1::before {
+  content: " ";
+  display: flex;
+  height: 300px;
+  aspect-ratio: 1/1;
+  background-image: url("/assets/icon_site/white-bg_-no-shadow-designify-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  bottom: 15%;
+  left: 0;
+
+  position: absolute;
+  z-index: -1;
+  animation: infinite 10s linear Superman;
+}
+
+@keyframes Superman {
+  0% {
+    transform: scale(1.05) translateX(0%);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.7) translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.05) translateX(0%);
+    opacity: 0.5;
+  }
+}
+/* fin de l'animation de super man */
+
+/* Texte filling FX */
+.Art1 {
+  color: black;
+  text-align: center;
+  width: fit-content;
+  font-family: "Koulen" sans-serif;
+  /* font-size: 25px; */
+  font-size: clamp(15px, 1.5rem, 30px);
+  padding: 8px;
+  background: linear-gradient(
+    to left,
+    #831f0851 50%,
+    rgba(245, 222, 179, 0.33) 50%
+  );
+  background-size: 200% 100%;
+  background-position: left bottom;
+  border-radius: 8px;
+  transition: all 1s ease;
+}
+
+.Art1:hover {
+  background-position: right bottom;
+  color: wheat;
+}
+/* Fin Filling FX */
+.Articles2 {
+  width: clamp(350px 100% 1140px);
+  display: flex;
+  /* background-color: purple; */
+  justify-content: center;
+  align-items: center;
+}
+/* le remplissage du texte début */
+.Articles2 .article1bis {
+  color: wheat;
+  text-align: center;
+  width: fit-content;
+  font-family: "Koulen" sans-serif;
+  /* font-size: 25px; */
+  font-size: clamp(15px, 1.5rem, 30px);
+  padding: 8px;
+  background: linear-gradient(
+    to right,
+    #831f0851 50%,
+    rgba(245, 222, 179, 0.33) 50%
+  );
+  background-size: 200% 100%;
+  background-position: left bottom;
+  border-radius: 8px;
+  transition: all 1s ease;
+}
+
+.Articles2 .article1bis:hover {
+  background-position: right bottom;
+  color: black;
+}
+/* Fin de l'effet fillig Text */
+.Icons {
+  display: flex;
+  color: #831e08;
+  /* background-color: rosybrown; */
+  width: auto;
+  align-items: center;
+}
+
+.Articles2:hover ~ div > i {
+  color: wheat;
+  transform: scale(1.1);
+}
+
+.Icons i {
+  font-size: 32px;
+  margin: 2px;
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+
+.Icons i:hover {
+  color: wheat;
+  transform: scale(1.05);
+}

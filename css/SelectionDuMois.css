@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Metamorphous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+body {
+  background-image: url("/assets/Images_web/FondEcranDarkVador.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  /* background-color: coral; */
+  position: relative;
+}
+
+#Burger {
+  display: none;
+}
+
+#Burger:checked ~ label .bar1 {
+  transform: rotate(45deg);
+  background-color: #831e08;
+}
+#Burger:checked ~ label .bar3 {
+  transform: rotate(-45deg);
+  background-color: #831e08;
+}
+#Burger:checked ~ label .bar2 {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+label .bar1,
+label .bar3 {
+  transform-origin: left;
+}
+
+label {
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s linear;
+}
+
+label:hover {
+  transform: scale(1.2) rotate(-90deg);
+}
+
+.Menu_Burger {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+}
+
+.Menu_Burger div:not(.MenuApparait) {
+  height: 3px;
+  width: 22.5px;
+  background-color: wheat;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.MenuApparait {
+  display: flex;
+  flex-direction: column;
+  /* background-color: violet; */
+  width: 200px;
+  height: 50vh;
+  transform: translateX(-100%);
+  transition: all 0.4s linear;
+}
+
+.MenuApparait a {
+  padding: 20px;
+  font-family: "Koulen", sans-serif;
+  font-size: clamp(10px, 100%, 17px);
+  text-transform: capitalize;
+  text-decoration: none;
+  color: wheat;
+  transition: all 0.4s ease;
+  position: relative;
+  width: fit-content;
+}
+
+.MenuApparait a:after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 30%;
+  left: 15%;
+  background-color: #831e08;
+  transform-origin: bottom left;
+  transition: transform 0.4s ease;
+}
+
+.MenuApparait a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  background-color: wheat;
+}
+
+.MenuApparait a:hover {
+  transform: scale(0.9);
+  color: #831e08;
+}
+
+#Burger:checked ~ div.MenuApparait {
+  transform: translateX(0);
+}
+
+header h1 {
+  text-transform: uppercase;
+
+  color: #831e08;
+
+  font-family: "Koulen", sans-serif;
+  font-size: 45px;
+  text-align: center;
+
+  transition: all 0.7s ease;
+}
+header h1:hover {
+  transform: scale(1.02);
+  color: wheat;
+}
+
+.PartieDuHaut {
+  display: flex;
+  justify-content: center;
+  /* background-color: royalblue; */
+  width: 100%;
+}
+
+.Search {
+  display: flex;
+  align-items: center;
+  /* background-color: grey; */
+  /* width: 100%; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.Search i {
+  padding: 5px;
+  color: #831e08;
+}
+
+.Search p {
+  color: #831e08;
+  font-family: "Koulen", sans-serif;
+  padding: 5px;
+}
+
+.Carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.PosterFilms {
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 5%;
+  align-items: baseline;
+  height: 65vh;
+  justify-content: space-evenly;
+  /* background-color: violet; */
+  width: 78%;
+  gap: 0.5% 2%;
+}
+
+.PosterFilms a img {
+  border-radius: 10px;
+  /* min-width: 10vw;
+  max-width: 180px; */
+  width: clamp(100px, 15vw, 180px);
+  aspect-ratio: 3/5;
+  box-shadow: 2px 3px 5px #831e08;
+}
+
+.PosterFilms > a:hover {
+  transform: scale(1.05) translateY(-20%);
+}
+.PosterFilms > a {
+  transition: all 0.6s ease;
+}
+
+.item1,
+.item3,
+.item5 {
+  transform: translateY(-10%);
+}
+
+.PosterFilms .item1,
+.PosterFilms .item2,
+.PosterFilms .item3,
+.PosterFilms .item4,
+.PosterFilms .item5 {
+  position: relative;
+}
+
+.PosterFilms > a i {
+  color: gold;
+  font-weight: 300;
+  font-size: clamp(10px, 1.5rem, 15px);
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.PosterFilms > a i:hover {
+  color: palevioletred;
+  font-weight: 500;
+  transform: scale(1.3);
+}
+
+#Heart1,
+#Heart2,
+#Heart3,
+#Heart4,
+#Heart5 {
+  display: none;
+}
+
+#Heart1:checked ~ label i,
+#Heart2:checked ~ label i,
+#Heart3:checked ~ label i,
+#Heart4:checked ~ label i,
+#Heart5:checked ~ label i {
+  font-weight: bold;
+  color: red;
+}
+
+.Carousel2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5% 1%;
+  /* background-color: violet; */
+  /* width: 100%; */
+}
+
+.Carousel2 a img {
+  width: clamp(270px, 15vw, 320px);
+  aspect-ratio: 16/9;
+  box-shadow: 1px 1px 5px #831e08;
+  /* transition: all 0.4s ease-in-out; */
+}
+
+.Carousel2 > a:hover {
+  transform: scale(1.05) translateY(-5%);
+}
+
+.Carousel2 > a {
+  transition: all 0.6s ease;
+}
+
+.Carousel2 .item6,
+.Carousel2 .item7,
+.Carousel2 .item8,
+.Carousel2 .item9,
+.Carousel2 .item10 {
+  /* top: -50px; */
+  position: relative;
+}
+
+.Carousel2 > a i {
+  color: gold;
+  font-weight: 300;
+  font-size: clamp(10px, 1.5rem, 15px);
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.Carousel2 > a i:hover {
+  color: palevioletred;
+  font-weight: 500;
+  transform: scale(1.3);
+}
+
+#Heart6,
+#Heart7,
+#Heart8,
+#Heart9,
+#Heart10 {
+  display: none;
+}
+
+#Heart6:checked ~ label i,
+#Heart7:checked ~ label i,
+#Heart8:checked ~ label i,
+#Heart9:checked ~ label i,
+#Heart10:checked ~ label i {
+  font-weight: bold;
+  color: red;
+}
+
+.Icons {
+  position: fixed;
+  top: 50%;
+  left: 1px;
+  display: flex;
+  flex-direction: column;
+}
+.Icons i {
+  font-size: 28px;
+  margin: 2px;
+  transition: all 0.4s linear;
+  color: #831e08;
+  cursor: pointer;
+}
+
+.Icons i:hover {
+  color: wheat;
+  transform: scale(1.1);
+}
+
+.BtnUp {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40px;
+  color: goldenrod;
+  position: fixed;
+  bottom: 5%;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.BtnUp:hover {
+  color: palevioletred;
+  transform: scale(1.08);
+}
+
+.BtnUp.Active {
+  color: #831e08;
+}

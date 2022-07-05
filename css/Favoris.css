@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Metamorphous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+body {
+  background: linear-gradient(to right bottom, black, #831e08, black);
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  background-position: center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  position: relative;
+  /* background-color: #fff; */
+  height: 30vh;
+}
+
+.Titre {
+  display: flex;
+  align-items: flex-end;
+}
+.Titre h1 {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #831e08, wheat);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Koulen", sans-serif;
+  font-size: 45px;
+  transition: all 0.7s ease;
+}
+
+.Titre h1:hover {
+  transform: scale(1.05);
+}
+/* Mon menu Burger Début */
+#Burger {
+  display: none;
+}
+/* la transformation en croix des 3 barres */
+#Burger:checked ~ label .bar1 {
+  transform: rotate(45deg);
+  background-color: #831e08;
+}
+#Burger:checked ~ label .bar3 {
+  transform: rotate(-45deg);
+  background-color: #831e08;
+}
+#Burger:checked ~ label .bar2 {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+label .bar1,
+label .bar3 {
+  transform-origin: left;
+}
+label {
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s linear;
+}
+
+label:hover {
+  transform: scale(1.2) rotate(90deg);
+}
+
+.Menu_Burger {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+  height: 10vh;
+}
+
+.Menu_Burger div:not(.MenuApparait) {
+  height: 3px;
+  width: 22.5px;
+  background-color: wheat;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.MenuApparait {
+  display: flex;
+  height: 10vh;
+  width: fit-content;
+  transform: translateX(-101%);
+  transition: all 1s ease-in;
+}
+
+.MenuApparait a {
+  padding: 20px;
+  font-family: "Koulen", sans-serif;
+  font-size: 17px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: wheat;
+  position: relative;
+  height: fit-content;
+  transition: all 0.4s ease;
+}
+
+/* à l'interieur du Menu Burger effet underline scale début */
+.MenuApparait a:after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 30%;
+  left: 10%;
+  background-color: #831e08;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+}
+
+.MenuApparait a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: wheat;
+}
+/* fin de l'effet underline */
+.MenuApparait a:hover {
+  transform: scale(0.9);
+  color: #831e08;
+}
+
+/* Apparition du Menu quand on check le label/box */
+
+#Burger:checked ~ div.MenuApparait {
+  transform: translateX(-3%);
+}
+/* Fin de mon menu Burger */
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Galerie {
+  padding-top: 100px;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(10, auto);
+  grid-gap: 0.5%;
+}
+/* Ombre sous image dorée */
+.Galerie a img {
+  width: clamp(115px, 100%, 340px);
+  aspect-ratio: 3/5;
+  border-radius: 3px;
+  box-shadow: 2px 3px 5px goldenrod;
+}
+
+.Galerie > a:hover {
+  transform: scale(1.05);
+}
+
+.Galerie > a {
+  transition: all 0.4s;
+}
+
+.Galerie .item {
+  position: relative;
+  /* display: none; */
+}
+/* Javascript section */
+.Galerie .item.ActiveJs {
+  display: inline-block;
+  position: absolute;
+}
+/* le coeur favoris */
+.Galerie i {
+  color: gold;
+  font-weight: bold;
+  font-size: clamp(4px, 1.5rem, 15px);
+  position: absolute;
+  top: 1%;
+  right: 5%;
+  cursor: pointer;
+  /* display: none; */
+}
+/* les checkbox invisibles */
+#Heart1,
+#Heart2,
+#Heart3,
+#Heart4,
+#Heart5,
+#Heart6,
+#Heart7,
+#Heart8,
+#Heart9,
+#Heart10,
+#Heart11,
+#Heart12,
+#Heart13,
+#Heart14,
+#Heart15,
+#Heart16,
+#Heart17,
+#Heart18,
+#Heart19,
+#Heart20,
+#Heart21 {
+  display: none;
+}
+
+.Icons {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 50%;
+}
+
+.Icons i {
+  font-size: 33px;
+  margin: 2px;
+  color: #831e08;
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+
+.Icons i:hover {
+  color: wheat;
+  transform: scale(1.1);
+}
+
+.BtnUp {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40px;
+  color: goldenrod;
+  position: fixed;
+  top: 45%;
+  right: 0;
+  cursor: pointer;
+  transition: all 1s linear;
+}
+
+.BtnUp.Active {
+  color: #831e08;
+  transform: scale(1.2);
+}
