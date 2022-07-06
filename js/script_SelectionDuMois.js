@@ -63,7 +63,7 @@ const btnArrow = document.querySelector('.BtnUp');
 btnArrow.addEventListener('click', () => {
   btnArrow.classList.add("Active")
   window.scrollTo({
-    top: 0,
+    top: 200,
     behavior: "smooth"
   });
 });

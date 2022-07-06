@@ -5,6 +5,7 @@ body {
   background-image: url("/assets/Images_web/FondEcranDarkVador.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 body::-webkit-scrollbar {
@@ -115,7 +116,7 @@ label:hover {
 }
 
 #Burger:checked ~ div.MenuApparait {
-  transform: translateX(0);
+  transform: translateX(-10%);
 }
 
 header h1 {
@@ -164,6 +165,7 @@ header h1:hover {
 }
 
 .Carousel {
+  padding-top: clamp(5%, 10%, 20%);
   display: flex;
   justify-content: center;
 }
@@ -171,13 +173,13 @@ header h1:hover {
 .PosterFilms {
   display: flex;
   box-sizing: border-box;
-  padding-top: 5%;
-  align-items: baseline;
-  height: 65vh;
+  /* padding-top: 5%; */
+  align-items: center;
+  height: clamp(15vh, 50vh, 65vh);
   justify-content: space-evenly;
   /* background-color: violet; */
   width: 78%;
-  gap: 0.5% 2%;
+  gap: 0.5% 0.5%;
 }
 
 .PosterFilms a img {
@@ -244,6 +246,7 @@ header h1:hover {
 }
 
 .Carousel2 {
+  padding-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,16 +341,39 @@ header h1:hover {
   align-items: center;
   width: 40px;
   color: goldenrod;
-  position: fixed;
-  bottom: 5%;
-  right: 0;
+  position: absolute;
+  bottom: clamp(6%, 20%, 29%);
+  right: clamp(25%, 50%, 55%);
+  transform: rotate(180deg);
   cursor: pointer;
   transition: all 0.5s linear;
+  animation: Arrow linear 2s infinite;
 }
-
+@keyframes Arrow {
+  25% {
+    position: absolute;
+    bottom: clamp(5%, 23%, 30%);
+    right: clamp(25%, 50%, 55%);
+  }
+  50% {
+    position: absolute;
+    bottom: clamp(6%, 20%, 29%);
+    right: clamp(25%, 50%, 55%);
+  }
+  75% {
+    position: absolute;
+    bottom: clamp(5%, 23%, 30%);
+    right: clamp(25%, 50%, 55%);
+  }
+  100% {
+    position: absolute;
+    bottom: clamp(6%, 20%, 29%);
+    right: clamp(25%, 50%, 55%);
+  }
+}
 .BtnUp:hover {
   color: palevioletred;
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(180deg);
 }
 
 .BtnUp.Active {

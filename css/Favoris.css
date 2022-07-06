@@ -153,11 +153,12 @@ main {
   justify-content: space-evenly;
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(10, auto);
-  grid-gap: 0.5%;
+  grid-gap: 1%;
+  margin: 0 15px;
 }
 /* Ombre sous image dorée */
 .Galerie a img {
-  width: clamp(115px, 100%, 340px);
+  width: clamp(115px, 100%, 400px);
   aspect-ratio: 3/5;
   border-radius: 3px;
   box-shadow: 2px 3px 5px goldenrod;
@@ -184,7 +185,7 @@ main {
 .Galerie i {
   color: gold;
   font-weight: bold;
-  font-size: clamp(4px, 1.5rem, 15px);
+  font-size: clamp(4px, 1.5rem, 18px);
   position: absolute;
   top: 1%;
   right: 5%;
@@ -221,6 +222,7 @@ main {
   flex-direction: column;
   position: fixed;
   bottom: 50%;
+  left: 0%;
 }
 
 .Icons i {
@@ -245,7 +247,7 @@ main {
   color: goldenrod;
   position: fixed;
   top: 45%;
-  right: 0;
+  right: -0.5%;
   cursor: pointer;
   transition: all 1s linear;
 }
